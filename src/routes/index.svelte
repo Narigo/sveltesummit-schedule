@@ -22,7 +22,7 @@
 </script>
 
 <h1>Welcome to the Svelte Summit!</h1>
-<p>Please select your timezone:</p>
+<p>Please select your favorite timezone:</p>
 <select bind:value={offset}>
 	{#each timezones as timezone}
 		<option value={timezone.value}>{timezone.label}</option>
