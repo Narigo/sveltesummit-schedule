@@ -12,7 +12,7 @@
 	function calculateTime(time: string, offsetInMinutes: number): string {
 		const [h, m] = time.split(/:/).map((x) => parseInt(x, 10));
 		const offsetTimeInMinutes = h * 60 + m + offsetInMinutes + start;
-		const hourWithOffset = Math.floor(offsetTimeInMinutes / 60);
+		const hourWithOffset = Math.floor(offsetTimeInMinutes / 60) % 24;
 		const minsWithOffset = offsetTimeInMinutes % 60;
 		return `${nf(hourWithOffset)}:${nf(minsWithOffset)}`;
 	}
@@ -58,3 +58,9 @@
 	<li>{calculateWithOffset('5:40')} - An update on SvelteKit</li>
 	<li>{calculateWithOffset('6:10')} - End notes and Discord Stage hangout!</li>
 </ol>
+
+<style>
+	li {
+		list-style-type: none;
+	}
+</style>
