@@ -18,6 +18,8 @@ module.exports = {
 			fallback: null
 		}),
 
+		ssr: false,
+
 		vite: {
 			server: {
 				hmr: {
