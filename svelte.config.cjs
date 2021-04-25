@@ -18,6 +18,10 @@ module.exports = {
 			fallback: null
 		}),
 
+		paths: {
+			base: '/sveltesummit-schedule'
+		},
+
 		ssr: false,
 
 		vite: {
