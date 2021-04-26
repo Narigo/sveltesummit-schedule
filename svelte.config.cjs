@@ -22,7 +22,7 @@ module.exports = {
 			base: '/sveltesummit-schedule'
 		},
 
-		ssr: false,
+		// ssr: false,
 
 		vite: {
 			server: {
