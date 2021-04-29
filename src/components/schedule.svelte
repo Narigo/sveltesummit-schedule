@@ -37,7 +37,7 @@
 	}
 
 	function isScheduleByTimes(schedule: Schedule): schedule is ScheduleWithTimes[] {
-		return false;
+		return schedule.length === 0 || !!(schedule[0] as ScheduleWithTimes).time;
 	}
 
 	function nf(n: number): string {
