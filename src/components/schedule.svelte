@@ -1,10 +1,44 @@
 <script lang="ts">
-	export let offset: number = 0;
-	export let schedule: { time: string; name: string }[] = [];
+	interface Talk {
+		name: string;
+	}
+	interface ScheduleWithTimes extends Talk {
+		time: string;
+	}
+	interface ScheduleWithDuration extends Talk {
+		duration: string;
+	}
+	type Schedule = ScheduleWithTimes[] | ScheduleWithDuration[];
 
+	export let offset: number = 0;
+	export let schedule: Schedule = [];
+
+	let scheduleByTimes = isScheduleByTimes(schedule)
+		? schedule
+		: schedule.reduce<ScheduleWithTimes[]>((s, item, index) => {
+				return [
+					...s,
+					{
+						name: item.name,
+						time: index === 0 ? '0:00' : addDurationToTime(item.duration, s[s.length - 1].time)
+					}
+				];
+		  }, []);
 	let start = 14 * 60;
 
 	$: calculateWithOffset = (time: string) => calculateTime(time, offset);
+
+	function addDurationToTime(duration: string, time: string): string {
+		const [ah, am] = time.split(/:/).map((x) => parseInt(x, 10));
+		const [dh, dm] = duration.split(/:/).map((x) => parseInt(x, 10));
+		const h = Math.floor((am + dm) / 60) + ah;
+		const m = (am + dm) % 60;
+		return `${h}:${m}`;
+	}
+
+	function isScheduleByTimes(schedule: Schedule): schedule is ScheduleWithTimes[] {
+		return false;
+	}
 
 	function nf(n: number): string {
 		return `${n}`.padStart(2, '0');
@@ -22,7 +56,7 @@
 <h2>Svelte Summit Schedule</h2>
 
 <ol>
-	{#each schedule as talk}
+	{#each scheduleByTimes as talk}
 		<li>{calculateWithOffset(talk.time)} - {talk.name}</li>
 	{/each}
 </ol>
