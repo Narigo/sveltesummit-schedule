@@ -1,4 +1,7 @@
 <script lang="ts">
+	import ScheduleItem from './schedule-item.svelte';
+	import styles from './schedule.module.css';
+
 	interface Talk {
 		name: string;
 	}
@@ -31,7 +34,7 @@
 	function addDurationToTime(duration: string, time: string): string {
 		const [ah, am] = time.split(/:/).map((x) => parseInt(x, 10));
 		const [dh, dm] = duration.split(/:/).map((x) => parseInt(x, 10));
-		const h = Math.floor((am + dm) / 60) + ah;
+		const h = Math.floor((am + dm) / 60) + dh + ah;
 		const m = (am + dm) % 60;
 		return `${h}:${m}`;
 	}
@@ -54,15 +57,14 @@
 </script>
 
 <h2>Svelte Summit Schedule</h2>
-
 <ol>
 	{#each scheduleByTimes as talk}
-		<li>{calculateWithOffset(talk.time)} - {talk.name}</li>
+		<ScheduleItem className={styles.item} time={calculateWithOffset(talk.time)} talk={talk.name} />
 	{/each}
 </ol>
 
 <style>
-	li {
+	ol {
 		list-style-type: none;
 	}
 </style>

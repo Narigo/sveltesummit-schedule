@@ -25,6 +25,12 @@ module.exports = {
 		// ssr: false,
 
 		vite: {
+			css: {
+				modules: {
+					localsConvention: 'dashesOnly',
+					scopeBehaviour: 'local'
+				}
+			},
 			server: {
 				hmr: {
 					port: 3001

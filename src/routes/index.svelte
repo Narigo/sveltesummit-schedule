@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Schedule from '../components/schedule.svelte';
-	import schedule from '../service/svelte-summit-2021-spring-by-time';
+	import schedule from '../service/svelte-summit-2021-spring-by-duration';
 
 	let offset = 0;
 
