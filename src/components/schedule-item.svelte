@@ -5,7 +5,8 @@
 </script>
 
 <li class={className}>
-	<span class="time">{time}</span><span class="talk">{talk}</span>
+	<span class="time">{time}</span>
+	<span class="talk"><slot /></span>
 </li>
 
 <style>
