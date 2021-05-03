@@ -11,10 +11,9 @@
 <style>
 	li {
 		align-items: center;
-		background-color: #eee;
 		display: flex;
 		gap: 25px;
-        margin-bottom: 10px;
+		margin-bottom: 10px;
 	}
 	.time {
 	}
