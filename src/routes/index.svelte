@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Layout from '../components/layout.svelte';
+
 	import Schedule from '../components/schedule.svelte';
 	import schedule from '../service/svelte-summit-2021-spring-by-duration';
 
@@ -22,12 +24,18 @@
 	];
 </script>
 
-<h1>Welcome to the Svelte Summit!</h1>
-<p>Please select your favorite timezone:</p>
-<select bind:value={offset}>
-	{#each timezones as timezone}
-		<option value={timezone.value}>{timezone.label}</option>
-	{/each}
-</select>
-
-<Schedule {offset} {schedule} />
+<Layout>
+	<div slot="header">
+		<h1>Welcome to the Svelte Summit!</h1>
+	</div>
+	<p>Please select your favorite timezone:</p>
+	<select bind:value={offset}>
+		{#each timezones as timezone}
+			<option value={timezone.value}>{timezone.label}</option>
+		{/each}
+	</select>
+	<Schedule {offset} {schedule} />
+	<div slot="footer">
+		<h1>done.</h1>
+	</div>
+</Layout>

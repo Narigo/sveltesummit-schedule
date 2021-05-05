@@ -1,10 +1,9 @@
 <script lang="ts">
-	export let className: string;
 	export let talk: string;
 	export let time: string;
 </script>
 
-<li class={className}>
+<li>
 	<span class="time">{time}</span>
 	<span class="talk"><slot /></span>
 </li>
@@ -15,9 +14,9 @@
 		display: flex;
 		gap: 25px;
 		margin-bottom: 10px;
+		padding: 0.5em 0;
 	}
-	.time {
-	}
+
 	.talk {
 		flex: 1;
 	}

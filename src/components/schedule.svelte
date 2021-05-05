@@ -59,14 +59,13 @@
 <h2>Svelte Summit Schedule</h2>
 <ol>
 	{#each scheduleByTimes as talk}
-		<ScheduleItem className={styles.item} time={calculateWithOffset(talk.time)}
-			>{talk.name}</ScheduleItem
-		>
+		<ScheduleItem time={calculateWithOffset(talk.time)}>{talk.name}</ScheduleItem>
 	{/each}
 </ol>
 
 <style>
 	ol {
 		list-style-type: none;
+		padding: 0;
 	}
 </style>
