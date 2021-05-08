@@ -1,8 +1,8 @@
-const preprocess = require('svelte-preprocess');
-const adapter = require('@sveltejs/adapter-static');
+import preprocess from 'svelte-preprocess';
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
-module.exports = {
+const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: preprocess(),
@@ -22,8 +22,6 @@ module.exports = {
 			base: '/sveltesummit-schedule'
 		},
 
-		// ssr: false,
-
 		vite: {
 			css: {
 				modules: {
@@ -39,3 +37,5 @@ module.exports = {
 		}
 	}
 };
+
+export default config;
