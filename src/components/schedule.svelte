@@ -1,20 +1,22 @@
+<script context="module" lang="ts">
+	export interface Talk {
+		name: string;
+	}
+	export interface ScheduleWithTimes extends Talk {
+		time: string;
+	}
+	export interface ScheduleWithDuration extends Talk {
+		duration: string;
+	}
+	export type ScheduleItems = ScheduleWithTimes[] | ScheduleWithDuration[];
+</script>
+
 <script lang="ts">
 	import ScheduleItem from './schedule-item.svelte';
 	import styles from './schedule.module.css';
 
-	interface Talk {
-		name: string;
-	}
-	interface ScheduleWithTimes extends Talk {
-		time: string;
-	}
-	interface ScheduleWithDuration extends Talk {
-		duration: string;
-	}
-	type Schedule = ScheduleWithTimes[] | ScheduleWithDuration[];
-
 	export let offset: number = 0;
-	export let schedule: Schedule = [];
+	export let schedule: ScheduleItems = [];
 
 	let scheduleByTimes = isScheduleByTimes(schedule)
 		? schedule
@@ -39,7 +41,7 @@
 		return `${h}:${m}`;
 	}
 
-	function isScheduleByTimes(schedule: Schedule): schedule is ScheduleWithTimes[] {
+	function isScheduleByTimes(schedule: ScheduleItems): schedule is ScheduleWithTimes[] {
 		return schedule.length === 0 || !!(schedule[0] as ScheduleWithTimes).time;
 	}
 

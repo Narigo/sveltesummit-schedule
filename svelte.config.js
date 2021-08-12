@@ -18,8 +18,12 @@ const config = {
 			fallback: null
 		}),
 
+		files: {
+			assets: 'static'
+		},
+
 		paths: {
-			base: '/sveltesummit-schedule'
+			// base: '/sveltesummit-schedule'
 		},
 
 		vite: {

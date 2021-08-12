@@ -2,9 +2,8 @@
 	import Layout from '../components/layout.svelte';
 
 	import Schedule from '../components/schedule.svelte';
-	import schedule from '../service/svelte-summit-2021-spring-by-duration';
-
-	let offset = 0;
+	import type { ScheduleItems } from '../components/schedule.svelte';
+	import { assets } from '$app/paths';
 
 	const timezones = [
 		{ value: -8 * 60, label: 'San Francisco (PDT)' },
@@ -22,11 +21,21 @@
 		{ value: 8 * 60, label: 'Tokyo (JST)' },
 		{ value: 9 * 60, label: 'Sydney (AEST)' }
 	];
+
+	const availableSchedules = [
+		{
+			value: `${assets}/schedules/svelte-summit-2021-spring-by-duration.js`,
+			label: 'Svelte Summit Spring 2021'
+		}
+	];
+
+	let offset = 0;
+	let selectedSchedule: string = availableSchedules[availableSchedules.length - 1].value;
 </script>
 
 <Layout>
 	<div slot="header">
-		<h1>Welcome to the Svelte Summit!</h1>
+		<h1>Welcome to the Svelte Summit Schedule!</h1>
 	</div>
 	<p>Please select your favorite timezone:</p>
 	<select bind:value={offset}>
@@ -34,7 +43,14 @@
 			<option value={timezone.value}>{timezone.label}</option>
 		{/each}
 	</select>
-	<Schedule {offset} {schedule} />
+	<select bind:value={selectedSchedule}>
+		{#each availableSchedules as schedule}
+			<option value={schedule.value} selected={schedule.value === selectedSchedule}
+				>{schedule.label}</option
+			>
+		{/each}
+	</select>
+	<p>selected {offset} for {selectedSchedule}</p>
 	<div slot="footer">
 		<h1>done.</h1>
 	</div>
