@@ -1,37 +1,34 @@
 <script context="module" lang="ts">
-	export interface Talk {
+	interface Talk {
 		name: string;
 	}
-	export interface ScheduleWithTimes extends Talk {
+	interface ScheduleItemWithTime extends Talk {
 		time: string;
 	}
-	export interface ScheduleWithDuration extends Talk {
+	interface ScheduleItemWithDuration extends Talk {
 		duration: string;
 	}
-	export type ScheduleItems = ScheduleWithTimes[] | ScheduleWithDuration[];
+	type ScheduleItems = ScheduleItemWithTime[] | ScheduleItemWithDuration[];
 </script>
 
 <script lang="ts">
+	import { assets } from '$app/paths';
+
 	import ScheduleItem from './schedule-item.svelte';
 	import styles from './schedule.module.css';
 
 	export let offset: number = 0;
-	export let schedule: ScheduleItems = [];
-
-	let scheduleByTimes = isScheduleByTimes(schedule)
-		? schedule
-		: schedule.reduce<ScheduleWithTimes[]>((s, item, index) => {
-				return [
-					...s,
-					{
-						name: item.name,
-						time: index === 0 ? '0:00' : addDurationToTime(item.duration, s[s.length - 1].time)
-					}
-				];
-		  }, []);
-	let start = 14 * 60;
+	export let scheduleFile: string;
 
 	$: calculateWithOffset = (time: string) => calculateTime(time, offset);
+	$: import(`../service/schedules/${scheduleFile}.js`).then((m) => {
+		schedule = m.default;
+		scheduleByTimes = getScheduleByTime(schedule);
+	});
+
+	let schedule: ScheduleItems = [];
+	let scheduleByTimes = getScheduleByTime(schedule);
+	let start = 14 * 60;
 
 	function addDurationToTime(duration: string, time: string): string {
 		const [ah, am] = time.split(/:/).map((x) => parseInt(x, 10));
@@ -41,8 +38,22 @@
 		return `${h}:${m}`;
 	}
 
-	function isScheduleByTimes(schedule: ScheduleItems): schedule is ScheduleWithTimes[] {
-		return schedule.length === 0 || !!(schedule[0] as ScheduleWithTimes).time;
+	function getScheduleByTime(schedule: ScheduleItems): ScheduleItemWithTime[] {
+		return isScheduleByTimes(schedule)
+			? schedule
+			: schedule.reduce<ScheduleItemWithTime[]>((s, item, index) => {
+					return [
+						...s,
+						{
+							name: item.name,
+							time: index === 0 ? '0:00' : addDurationToTime(item.duration, s[s.length - 1].time)
+						}
+					];
+			  }, []);
+	}
+
+	function isScheduleByTimes(schedule: ScheduleItems): schedule is ScheduleItemWithTime[] {
+		return schedule.length === 0 || !!(schedule[0] as ScheduleItemWithTime).time;
 	}
 
 	function nf(n: number): string {
