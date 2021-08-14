@@ -21,8 +21,9 @@
 		padding: 2em;
 	}
 	main {
-		display: flex;
-		flex-direction: column;
 		align-items: center;
+		display: flex;
+		flex-grow: 1;
+		flex-direction: column;
 	}
 </style>
