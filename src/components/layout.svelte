@@ -20,6 +20,7 @@
 		margin: 0;
 		padding: 2em;
 	}
+
 	main {
 		align-items: center;
 		display: flex;

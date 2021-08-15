@@ -12,8 +12,6 @@
 </script>
 
 <script lang="ts">
-	import { assets } from '$app/paths';
-
 	import ScheduleItem from './schedule-item.svelte';
 	import styles from './schedule.module.css';
 

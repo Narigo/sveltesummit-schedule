@@ -12,8 +12,8 @@
 	li {
 		align-items: center;
 		display: flex;
-		gap: 25px;
-		margin-bottom: 10px;
+		gap: 2em;
+		margin-bottom: 1em;
 		padding: 0.5em 0;
 	}
 
