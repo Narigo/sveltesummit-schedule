@@ -1,13 +1,13 @@
-<slot name="fullheader"
-	><header>
+<slot name="fullheader">
+	<header>
 		<slot name="header">hello</slot>
 	</header>
 </slot>
 <main>
 	<slot />
 </main>
-<slot name="full-footer"
-	><footer>
+<slot name="full-footer">
+	<footer>
 		<slot name="footer">hello footer</slot>
 	</footer>
 </slot>
