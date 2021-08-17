@@ -16,6 +16,7 @@
 	header,
 	footer {
 		background-color: #666;
+		color: #f9f9f9;
 		display: flex;
 		margin: 0;
 		padding: 2em;
