@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { base } from '$app/paths';
+</script>
+
 <slot name="fullheader">
 	<header>
 		<slot name="header">hello</slot>
@@ -8,7 +12,7 @@
 </main>
 <slot name="full-footer">
 	<footer>
-		<slot name="footer">hello footer</slot>
+		<slot name="footer"><a href="{base}/">Back to selection</a></slot>
 	</footer>
 </slot>
 
