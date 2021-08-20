@@ -26,6 +26,11 @@
 		padding: 2em;
 	}
 
+	footer a {
+		color: #fff;
+		text-decoration: underline;
+	}
+
 	main {
 		align-items: center;
 		display: flex;
