@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import Link from './link.svelte';
 </script>
 
 <slot name="fullheader">
@@ -12,7 +12,7 @@
 </main>
 <slot name="full-footer">
 	<footer>
-		<slot name="footer"><a href="{base}/">Back to selection</a></slot>
+		<slot name="footer"><Link to="/">Back to selection</Link></slot>
 	</footer>
 </slot>
 
@@ -24,11 +24,6 @@
 		display: flex;
 		margin: 0;
 		padding: 2em;
-	}
-
-	footer a {
-		color: #fff;
-		text-decoration: underline;
 	}
 
 	main {

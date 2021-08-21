@@ -1,5 +1,4 @@
 <script lang="ts">
-	// export let talk: string;
 	export let time: string;
 </script>
 
