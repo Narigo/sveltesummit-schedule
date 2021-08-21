@@ -13,7 +13,6 @@
 
 <script lang="ts">
 	import ScheduleItem from './schedule-item.svelte';
-	import styles from './schedule.module.css';
 
 	export let offset: number = 0;
 	export let scheduleFile: string;
