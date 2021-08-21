@@ -26,6 +26,10 @@
 		padding: 2em;
 	}
 
+	footer :global(a) {
+		color: #f9f9f9;
+	}
+
 	main {
 		align-items: center;
 		display: flex;

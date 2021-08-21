@@ -9,6 +9,13 @@
 		padding: 0;
 	}
 
+	:global(html) {
+		overflow: hidden;
+	}
+	:global(body, #svelte) {
+		overflow: auto;
+	}
+
 	:global(#svelte) {
 		display: flex;
 		flex-direction: column;

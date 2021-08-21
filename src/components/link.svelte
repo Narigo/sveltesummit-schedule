@@ -6,10 +6,3 @@
 </script>
 
 <a href={path}><slot /></a>
-
-<style>
-	a {
-		color: #fff;
-		text-decoration: underline;
-	}
-</style>
