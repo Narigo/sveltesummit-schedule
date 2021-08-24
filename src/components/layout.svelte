@@ -26,8 +26,8 @@
 		padding: 2em;
 	}
 
-	footer :global(a) {
-		color: #f9f9f9;
+	footer {
+		--link-color: #f9f9f9;
 	}
 
 	main {
