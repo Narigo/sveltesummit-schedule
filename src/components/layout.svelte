@@ -1,4 +1,5 @@
 <script lang="ts">
+	import availableSchedules from '../service/schedules';
 	import Link from './link.svelte';
 </script>
 
@@ -12,7 +13,16 @@
 </main>
 <slot name="full-footer">
 	<footer>
-		<slot name="footer"><Link to="/">Back to selection</Link></slot>
+		<slot name="footer">
+			<ul>
+				<li><Link to="/">Back to selection</Link></li>
+			</ul>
+			<ul>
+				{#each availableSchedules as schedule}
+					<li><Link to={`/schedule/${schedule.value}`}>{schedule.label}</Link></li>
+				{/each}
+			</ul>
+		</slot>
 	</footer>
 </slot>
 
