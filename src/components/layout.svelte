@@ -18,9 +18,12 @@
 				<li><Link to="/">Back to selection</Link></li>
 			</ul>
 			<ul>
-				{#each availableSchedules as schedule}
+				{#each availableSchedules.slice(0, 3) as schedule}
 					<li><Link to={`/schedule/${schedule.value}`}>{schedule.label}</Link></li>
 				{/each}
+				{#if availableSchedules.length >= 4}
+					<li><Link to="/">Show more schedules</Link></li>
+				{/if}
 			</ul>
 		</slot>
 	</footer>
