@@ -75,9 +75,10 @@
 
 <h2>Svelte Summit Schedule</h2>
 <ol>
-  {#each scheduleByTimes as talk}
-    <ScheduleItem time={calculateWithOffset(talk.time)}
-      >{talk.name}</ScheduleItem
+  {#each scheduleByTimes as talk, index}
+    <ScheduleItem
+      time={calculateWithOffset(talk.time)}
+      from={index % 2 === 0 ? "left" : "right"}>{talk.name}</ScheduleItem
     >
   {/each}
 </ol>
