@@ -78,7 +78,8 @@
   {#each scheduleByTimes as talk, index}
     <ScheduleItem
       time={calculateWithOffset(talk.time)}
-      from={index % 2 === 0 ? "left" : "right"}>{talk.name}</ScheduleItem
+      from={index % 2 === 0 ? "left" : "right"}
+      {index}>{talk.name}</ScheduleItem
     >
   {/each}
 </ol>
