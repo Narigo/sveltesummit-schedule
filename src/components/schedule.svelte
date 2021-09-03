@@ -79,7 +79,7 @@
     <ScheduleItem
       time={calculateWithOffset(talk.time)}
       from={index % 2 === 0 ? "left" : "right"}
-      {index}>{talk.name}</ScheduleItem
+      --animationDelay={`${index * 50}ms`}>{talk.name}</ScheduleItem
     >
   {/each}
 </ol>
