@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
   interface Talk {
     name: string;
+    link?: string;
   }
   interface ScheduleItemWithTime extends Talk {
     time: string;
@@ -43,6 +44,7 @@
             ...s,
             {
               name: item.name,
+              link: item.link,
               time:
                 index === 0
                   ? "0:00"
@@ -79,8 +81,16 @@
     <ScheduleItem
       time={calculateWithOffset(talk.time)}
       from={index % 2 === 0 ? "left" : "right"}
-      --animationDelay={`${index * 50}ms`}>{talk.name}</ScheduleItem
+      --animationDelay={`${index * 50}ms`}
     >
+      {#if talk.link}
+        <a href={talk.link} target="_blank" rel="noopener noreferer"
+          >{talk.name}</a
+        >
+      {:else}
+        {talk.name}
+      {/if}
+    </ScheduleItem>
   {/each}
 </ol>
 

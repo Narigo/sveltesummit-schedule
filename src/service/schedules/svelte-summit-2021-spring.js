@@ -1,5 +1,9 @@
 const schedule = [
-  { duration: "0:05", name: "Intro" },
+  {
+    duration: "0:05",
+    name: "Intro",
+    link: "https://www.youtube.com/watch?v=fnr9XWvjJHw",
+  },
   { duration: "0:10", name: "Generation Svelte" },
   { duration: "0:05", name: "Break" },
   { duration: "0:05", name: "Data Science Widgets with Svelte and Jupyter" },
