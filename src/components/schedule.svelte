@@ -18,15 +18,15 @@
   export let offset: number = 0;
   export let scheduleFile: string;
 
-  $: calculateWithOffset = (time: string) => calculateTime(time, offset);
-  $: import(`../service/schedules/${scheduleFile}.js`).then((m) => {
-    schedule = m.default;
-    scheduleByTimes = getScheduleByTime(schedule);
-  });
-
   let schedule: ScheduleItems = [];
   let scheduleByTimes = getScheduleByTime(schedule);
   let start = 14 * 60;
+  let calculateWithOffset = (time: string) => calculateTime(time, offset);
+
+  import(`../service/schedules/${scheduleFile}.js`).then((m) => {
+    schedule = m.default;
+    scheduleByTimes = getScheduleByTime(schedule);
+  });
 
   function addDurationToTime(duration: string, time: string): string {
     const [ah, am] = time.split(/:/).map((x) => parseInt(x, 10));
