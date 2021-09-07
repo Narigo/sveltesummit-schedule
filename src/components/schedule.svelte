@@ -1,18 +1,9 @@
-<script context="module" lang="ts">
-  interface Talk {
-    name: string;
-    link?: string;
-  }
-  interface ScheduleItemWithTime extends Talk {
-    time: string;
-  }
-  interface ScheduleItemWithDuration extends Talk {
-    duration: string;
-  }
-  type ScheduleItems = ScheduleItemWithTime[] | ScheduleItemWithDuration[];
-</script>
-
 <script lang="ts">
+  import type {
+    ScheduleItems,
+    ScheduleItemWithTime,
+  } from "../service/schedule-item";
+
   import ScheduleItem from "./schedule-item.svelte";
 
   export let offset: number = 0;
