@@ -22,10 +22,6 @@ const config = {
       assets: "static",
     },
 
-    paths: {
-      // base: '/sveltesummit-schedule'
-    },
-
     vite: {
       css: {
         modules: {
