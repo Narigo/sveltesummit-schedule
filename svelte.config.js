@@ -11,15 +11,10 @@ const config = {
     // hydrate the <div id="svelte"> element in src/app.html
     target: "#svelte",
 
-    adapter: adapter({
-      pages: "build",
-      assets: "build",
-      fallback: null,
-    }),
+    adapter: adapter(),
 
-    files: {
-      assets: "static",
-      lib: "src/lib",
+    paths: {
+      base: "/sveltesummit-schedule",
     },
 
     vite: {
