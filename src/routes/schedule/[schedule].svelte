@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import Layout from "../../components/layout.svelte";
-  import Schedule from "../../components/schedule.svelte";
+  import Layout from "$lib/component/layout.svelte";
+  import Schedule from "$lib/component/schedule.svelte";
   let schedule: string = $page.params.schedule;
 
   const timezones = [

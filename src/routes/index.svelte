@@ -1,7 +1,7 @@
 <script lang="ts">
-  import availableSchedules from "../service/schedules";
-  import Layout from "../components/layout.svelte";
-  import Link from "../components/link.svelte";
+  import availableSchedules from "$lib/service/schedules";
+  import Layout from "$lib/component/layout.svelte";
+  import Link from "$lib/component/link.svelte";
 </script>
 
 <Layout>

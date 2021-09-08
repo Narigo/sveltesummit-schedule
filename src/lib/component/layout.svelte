@@ -1,5 +1,5 @@
 <script lang="ts">
-  import availableSchedules from "../service/schedules";
+  import availableSchedules from "$lib/service/schedules";
   import Link from "./link.svelte";
 </script>
 

@@ -2,7 +2,7 @@
   import type {
     ScheduleItems,
     ScheduleItemWithTime,
-  } from "../service/schedule-item";
+  } from "$lib/service/schedule-item";
 
   import ScheduleItem from "./schedule-item.svelte";
 

@@ -12,7 +12,6 @@ const config = {
     target: "#svelte",
 
     adapter: adapter({
-      // default options are shown
       pages: "build",
       assets: "build",
       fallback: null,
@@ -20,6 +19,7 @@ const config = {
 
     files: {
       assets: "static",
+      lib: "src/lib",
     },
 
     vite: {

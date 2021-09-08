@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
-    "build": "svelte-kit build && touch build/.nojekyll",
+    "build": "npm run build:svelte && npm run build:no-jekyll",
+    "build:svelte": "svelte-kit build",
+    "build:no-jekyll": "touch build/.nojekyll",
     "format": "prettier --write .",
     "lint": "prettier --check . && eslint --ignore-path .gitignore .",
     "preview": "svelte-kit preview",
