@@ -12,7 +12,6 @@
   let schedule: ScheduleItems = [];
   let scheduleByTimes = getScheduleByTime(schedule);
   let start = 14 * 60;
-  let calculateWithOffset = (time: string) => calculateTime(time, offset);
 
   import(`../service/schedules/${scheduleFile}.js`).then((m) => {
     schedule = m.default;
@@ -70,7 +69,7 @@
 <ol>
   {#each scheduleByTimes as talk, index}
     <ScheduleItem
-      time={calculateWithOffset(talk.time)}
+      time={calculateTime(talk.time, offset)}
       from={index % 2 === 0 ? "left" : "right"}
       --animationDelay={`${index * 50}ms`}
     >
