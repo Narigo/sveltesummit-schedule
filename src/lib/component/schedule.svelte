@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { isScheduleByTimes } from "$lib/service/is-schedule-by-time";
+
   import type {
     ScheduleItems,
     ScheduleItemWithTime,
@@ -42,14 +44,6 @@
             },
           ];
         }, []);
-  }
-
-  function isScheduleByTimes(
-    schedule: ScheduleItems
-  ): schedule is ScheduleItemWithTime[] {
-    return (
-      schedule.length === 0 || !!(schedule[0] as ScheduleItemWithTime).time
-    );
   }
 
   function nf(n: number): string {
