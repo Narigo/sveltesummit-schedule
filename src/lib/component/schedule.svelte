@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { isScheduleByTimes } from "$lib/service/is-schedule-by-time";
+  import { isScheduleByTimes } from "$lib/service/is-schedule-by-times";
 
   import type {
     ScheduleItems,
