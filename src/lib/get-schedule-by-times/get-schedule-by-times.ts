@@ -1,5 +1,6 @@
+import { isScheduleByTimes } from "$lib/service/is-schedule-by-times";
 import type {
-  ScheduleItemWithDuration,
+  ScheduleItems,
   ScheduleItemWithTime,
 } from "../service/schedule-item";
 
@@ -16,19 +17,21 @@ function addDurationToTime(duration: string, time: string): string {
 }
 
 export default function getScheduleByTimes(
-  scheduleByDuration: ScheduleItemWithDuration[]
+  schedule: ScheduleItems
 ): ScheduleItemWithTime[] {
-  return scheduleByDuration.reduce<ScheduleItemWithTime[]>((s, item, index) => {
-    return [
-      ...s,
-      {
-        name: item.name,
-        link: item.link,
-        time:
-          index === 0
-            ? "0:00"
-            : addDurationToTime(item.duration, s[s.length - 1].time),
-      },
-    ];
-  }, []);
+  return isScheduleByTimes(schedule)
+    ? schedule
+    : schedule.reduce<ScheduleItemWithTime[]>((s, item, index) => {
+        return [
+          ...s,
+          {
+            name: item.name,
+            link: item.link,
+            time:
+              index === 0
+                ? "0:00"
+                : addDurationToTime(item.duration, s[s.length - 1].time),
+          },
+        ];
+      }, []);
 }

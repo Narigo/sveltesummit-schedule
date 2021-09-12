@@ -1,4 +1,4 @@
-import getScheduleByTimes from "./schedule-from-durations";
+import getScheduleByTimes from "./get-schedule-by-times";
 import scheduleWithDurations from "./__fixtures/schedule-with-durations";
 import scheduleWithTimes from "./__fixtures/schedule-with-times";
 
