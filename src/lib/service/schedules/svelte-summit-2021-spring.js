@@ -38,7 +38,7 @@ const schedule = [
   },
   {
     name: "Break",
-    time: "1:0",
+    time: "1:00",
   },
   {
     name: "Untangling Composition",
@@ -66,7 +66,7 @@ const schedule = [
   {
     name: "A signal engine for audio and music in your Svelte app",
     link: "https://youtu.be/fnr9XWvjJHw?t=6472",
-    time: "2:5",
+    time: "2:05",
   },
   {
     name: "Breakfast/Lunch/Dinner Break and Meetball session (starts at 2.10)!",
@@ -99,7 +99,7 @@ const schedule = [
   {
     name: "Quiz time!!",
     link: "https://youtu.be/fnr9XWvjJHw?t=13855",
-    time: "4:5",
+    time: "4:05",
   },
   {
     name: "Compile for accessibility with Svelte",
@@ -126,7 +126,7 @@ const schedule = [
   },
   {
     name: "Break",
-    time: "5:5",
+    time: "5:05",
   },
   {
     name: "Zwoosh YEAHHH Shabam! 🤯 Whimsy in motion (Full talk)",
@@ -140,7 +140,7 @@ const schedule = [
   {
     name: "An update on SvelteKit",
     link: "https://youtu.be/fnr9XWvjJHw?t=19101",
-    time: "6:5",
+    time: "6:05",
   },
   {
     name: "End notes and Discord Stage hangout!",
