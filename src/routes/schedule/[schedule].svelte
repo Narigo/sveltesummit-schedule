@@ -2,7 +2,9 @@
   import { page } from "$app/stores";
   import Layout from "$lib/component/layout.svelte";
   import Schedule from "$lib/component/schedule.svelte";
+  import availableSchedules from "$lib/service/schedules";
   let schedule: string = $page.params.schedule;
+  let scheduleObject = availableSchedules.find((s) => s.value === schedule);
 
   const timezones = [
     { value: -8 * 60, label: "UTC-08:00 - San Francisco (PDT)" },
@@ -48,5 +50,5 @@
     {/each}
   </select>
 
-  <Schedule {offset} scheduleFile={schedule} />
+  <Schedule start={scheduleObject.start} {offset} scheduleFile={schedule} />
 </Layout>
