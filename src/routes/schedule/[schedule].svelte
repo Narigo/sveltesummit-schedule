@@ -50,5 +50,5 @@
     {/each}
   </select>
 
-  <Schedule start={scheduleObject.start} {offset} scheduleFile={schedule} />
+  <Schedule scheduleMeta={scheduleObject} {offset} scheduleFile={schedule} />
 </Layout>
