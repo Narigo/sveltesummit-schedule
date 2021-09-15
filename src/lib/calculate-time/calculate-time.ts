@@ -14,11 +14,11 @@ function formatTime({
 
 export default function calculateTime(
   time: string,
-  start: number,
+  startInMinutes: number,
   offsetInMinutes: number
 ): string {
   const [h, m] = time.split(/:/).map((x) => parseInt(x, 10));
-  const offsetTimeInMinutes = h * 60 + m + offsetInMinutes + start;
+  const offsetTimeInMinutes = h * 60 + m + offsetInMinutes + startInMinutes;
   const hourWithOffset = Math.floor(offsetTimeInMinutes / 60) % 24;
   const minsWithOffset = offsetTimeInMinutes % 60;
   return formatTime({ hours: hourWithOffset, minutes: minsWithOffset });
