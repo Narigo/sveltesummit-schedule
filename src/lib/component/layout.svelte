@@ -1,6 +1,9 @@
 <script lang="ts">
   import availableSchedules from "$lib/service/schedules";
   import Link from "./link.svelte";
+
+  const firstThreeSchedules = availableSchedules.slice(0, 3);
+  const hasMoreSchedules = availableSchedules.length >= 4;
 </script>
 
 <slot name="fullheader">
@@ -18,12 +21,12 @@
         <li><Link to="/">Back to selection</Link></li>
       </ul>
       <ul>
-        {#each availableSchedules.slice(0, 3) as schedule}
+        {#each firstThreeSchedules as schedule}
           <li>
             <Link to={`/schedule/${schedule.value}`}>{schedule.label}</Link>
           </li>
         {/each}
-        {#if availableSchedules.length >= 4}
+        {#if hasMoreSchedules}
           <li><Link to="/">Show more schedules</Link></li>
         {/if}
       </ul>
