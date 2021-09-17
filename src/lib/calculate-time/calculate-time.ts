@@ -12,14 +12,16 @@ function formatTime({
   return `${nf(hours)}:${nf(minutes)}`;
 }
 
-export default function calculateTime(
-  time: string,
-  startInMinutes: number,
-  offsetInMinutes: number
-): string {
+const calculateTime: (args: {
+  time: string;
+  startInMinutes: number;
+  offsetInMinutes: number;
+}) => string = ({ time, startInMinutes = 0, offsetInMinutes = 0 }) => {
   const [h, m] = time.split(/:/).map((x) => parseInt(x, 10));
   const offsetTimeInMinutes = h * 60 + m + offsetInMinutes + startInMinutes;
   const hourWithOffset = Math.floor(offsetTimeInMinutes / 60) % 24;
   const minsWithOffset = offsetTimeInMinutes % 60;
   return formatTime({ hours: hourWithOffset, minutes: minsWithOffset });
-}
+};
+
+export default calculateTime;

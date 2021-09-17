@@ -26,7 +26,11 @@
 <ol>
   {#each scheduleByTimes as talk, index}
     <ScheduleItem
-      time={calculateTime(talk.time, startInMinutes, offset)}
+      time={calculateTime({
+        time: talk.time,
+        startInMinutes,
+        offsetInMinutes: offset,
+      })}
       from={index % 2 === 0 ? "left" : "right"}
       --animationDelay={`${index * 50}ms`}
     >
