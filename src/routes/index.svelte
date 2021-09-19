@@ -8,10 +8,20 @@
   <div slot="header">
     <h1>Welcome to the Svelte Summit Schedule!</h1>
   </div>
-  {#each availableSchedules as schedule}
-    <Link to={`/schedule/${schedule.value}`}>{schedule.label}</Link>
-  {/each}
+  <section>
+    {#each availableSchedules as schedule}
+      <Link to={`/schedule/${schedule.value}`}>{schedule.label}</Link>
+    {/each}
+  </section>
   <div slot="footer">
     <h1>done.</h1>
   </div>
 </Layout>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+</style>
