@@ -1,5 +1,6 @@
 <script lang="ts">
   import availableSchedules from "$lib/service/schedules";
+  import Header from "./header.svelte";
   import Link from "./link.svelte";
 
   const firstThreeSchedules = availableSchedules.slice(0, 3);
@@ -7,9 +8,9 @@
 </script>
 
 <slot name="fullheader">
-  <header>
+  <Header>
     <slot name="header">hello</slot>
-  </header>
+  </Header>
 </slot>
 <main>
   <slot />
@@ -35,7 +36,6 @@
 </slot>
 
 <style>
-  header,
   footer {
     background-color: #666;
     color: #f9f9f9;
