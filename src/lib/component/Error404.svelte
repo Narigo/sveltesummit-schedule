@@ -1,7 +1,6 @@
 <script lang="ts">
-  export let error: any;
+  export let path: string;
 </script>
 
 <h1>404 - Not found</h1>
-<p>The page could not be found.</p>
-<pre>{JSON.stringify(error)}</pre>
+<p>The page {path} could not be found.</p>
