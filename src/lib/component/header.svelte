@@ -66,14 +66,16 @@
     right: 0;
     max-height: 25vh;
     z-index: -1;
+    clip-path: circle(25% at 50% 100%);
   }
 
   header {
+    background-color: rgba(210, 66, 12, 0.5);
     color: #000;
     display: flex;
     gap: 2em;
     margin: 0;
-    padding: 2em;
+    padding: 0;
     height: 25vh;
     text-shadow: -2px 0 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 2px -2px 0 #fff,
       0 -2px 0 #fff;
