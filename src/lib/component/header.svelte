@@ -64,7 +64,7 @@
     top: 0;
     left: 0;
     right: 0;
-    max-height: 25vh;
+    height: 25vh;
     z-index: -1;
     clip-path: circle(25% at 50% 100%);
   }
