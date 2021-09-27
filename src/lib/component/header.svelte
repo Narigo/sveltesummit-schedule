@@ -66,7 +66,7 @@
     right: 0;
     height: 25vh;
     z-index: -1;
-    clip-path: circle(25% at 50% 100%);
+    animation: sun 15s infinite;
   }
 
   header {
@@ -79,5 +79,17 @@
     height: 25vh;
     text-shadow: -2px 0 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 2px -2px 0 #fff,
       0 -2px 0 #fff;
+  }
+
+  @keyframes sun {
+    0% {
+      clip-path: circle(23% at 50% 100%);
+    }
+    50% {
+      clip-path: circle(26% at 50% 100%);
+    }
+    100% {
+      clip-path: circle(23% at 50% 100%);
+    }
   }
 </style>
