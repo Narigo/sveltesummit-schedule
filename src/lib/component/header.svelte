@@ -29,29 +29,19 @@
           in="f1"
           result="f2"
           type="matrix"
-          values="-16 0 0 0 8
-                  -16 0 0 0 8
-                  -16 0 0 0 8
-                    0 0 0 0 1"
+          values="0 0 0 0 0
+                 -8 0 0 0 4
+                  0 0 0 0 0
+                  0 0 0 0 1"
         />
         <feColorMatrix in="f2" result="f3" type="luminanceToAlpha" />
-        <feComposite in="SourceGraphic" in2="f3" result="f4" operator="in" />
-        <feColorMatrix
-          in="f4"
-          result="f5"
-          type="matrix"
-          values="1 0 0 0 -1
-                  0 1 0 0 -1
-                  0 0 1 0 -1
-                  0 0 0 1  0"
-        />
         <feMerge>
           <feMergeNode in="SourceGraphic" />
-          <feMergeNode in="f5" />
+          <feMergeNode in="f3" />
         </feMerge>
       </filter>
     </defs>
-    <g fill="#fff">
+    <g fill="currentColor">
       <rect x="0" y="0" width="1000" height="500" filter="url(#noise)" />
     </g>
   </svg>
@@ -59,16 +49,6 @@
 </header>
 
 <style>
-  svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 25vh;
-    z-index: -1;
-    animation: sun 15s infinite;
-  }
-
   header {
     background-color: rgba(210, 66, 12, 0.5);
     color: #000;
@@ -81,14 +61,30 @@
       0 -2px 0 #fff;
   }
 
+  svg {
+    animation: sun 15s infinite ease-in-out alternate;
+    display: block;
+    clip-path: circle(25% at 50% 100%);
+    position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: rgba(210, 200, 108, 1);
+    z-index: -1;
+  }
+
   @keyframes sun {
     0% {
+      color: rgba(210, 200, 108, 1);
       clip-path: circle(23% at 50% 100%);
     }
     50% {
+      color: rgba(240, 230, 138, 1);
       clip-path: circle(26% at 50% 100%);
     }
     100% {
+      color: rgba(253, 200, 98, 1);
       clip-path: circle(23% at 50% 100%);
     }
   }
