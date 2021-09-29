@@ -30,9 +30,9 @@
           result="f2"
           type="matrix"
           values="0 0 0 0 0
-                 -8 0 0 0 4
-                  0 0 0 0 0
-                  0 0 0 0 1"
+                                                                  -8 0 0 0 4
+                                                                   0 0 0 0 0
+                                                                   0 0 0 0 1"
         />
         <feColorMatrix in="f2" result="f3" type="luminanceToAlpha" />
         <feMerge>
@@ -55,7 +55,9 @@
     display: flex;
     gap: 2em;
     margin: 0;
+    overflow: hidden;
     padding: 0;
+    position: relative;
     height: 25vh;
     text-shadow: -2px 0 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 2px -2px 0 #fff,
       0 -2px 0 #fff;
@@ -63,28 +65,24 @@
 
   svg {
     animation: sun 15s infinite ease-in-out alternate;
-    display: block;
     clip-path: circle(25% at 50% 100%);
-    position: relative;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
     color: rgba(210, 200, 108, 1);
-    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
   }
 
   @keyframes sun {
     0% {
-      color: rgba(210, 200, 108, 1);
+      color: rgba(245, 123, 57, 0.769);
       clip-path: circle(23% at 50% 100%);
     }
     50% {
-      color: rgba(240, 230, 138, 1);
+      color: rgb(247, 196, 84);
       clip-path: circle(26% at 50% 100%);
     }
     100% {
-      color: rgba(253, 200, 98, 1);
+      color: rgba(240, 173, 73, 0.947);
       clip-path: circle(23% at 50% 100%);
     }
   }
