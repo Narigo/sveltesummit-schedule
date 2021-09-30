@@ -1,4 +1,5 @@
 <header>
+  <div />
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +51,7 @@
 
 <style>
   header {
-    background-color: rgba(210, 66, 12, 0.5);
+    background-color: #000;
     color: #000;
     display: flex;
     gap: 2em;
@@ -61,6 +62,16 @@
     height: 25vh;
     text-shadow: -2px 0 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 2px -2px 0 #fff,
       0 -2px 0 #fff;
+  }
+
+  div {
+    animation: sunset 15s infinite ease-in-out alternate;
+    border-radius: 50% 50% 0 0;
+    box-shadow: inset 0 0 300px #000;
+    position: absolute;
+    left: -300px;
+    height: calc(100% + 300px);
+    width: calc(100% + 300px * 2);
   }
 
   svg {
@@ -84,6 +95,18 @@
     100% {
       color: rgba(240, 173, 73, 0.947);
       clip-path: circle(23% at 50% 100%);
+    }
+  }
+
+  @keyframes sunset {
+    0% {
+      background-color: rgb(247, 196, 84);
+    }
+    50% {
+      background-color: rgba(240, 173, 73, 0.947);
+    }
+    100% {
+      background-color: rgba(245, 123, 57, 0.769);
     }
   }
 </style>
