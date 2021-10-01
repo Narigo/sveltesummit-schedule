@@ -31,9 +31,9 @@
           result="f2"
           type="matrix"
           values="0 0 0 0 0
-                                                                  -8 0 0 0 4
-                                                                   0 0 0 0 0
-                                                                   0 0 0 0 1"
+                 -8 0 0 0 4
+                  0 0 0 0 0
+                  0 0 0 0 1"
         />
         <feColorMatrix in="f2" result="f3" type="luminanceToAlpha" />
         <feMerge>
