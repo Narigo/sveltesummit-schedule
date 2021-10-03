@@ -1,5 +1,4 @@
 <header>
-  <div />
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -53,6 +52,10 @@
 
 <style>
   header {
+    --animation-duration: 25s;
+    animation: sunset var(--animation-duration) infinite ease-in-out alternate;
+    background: linear-gradient(180deg, rgb(117, 62, 206), rgb(225, 142, 78));
+    background-size: 400% 400%;
     color: #000;
     display: flex;
     gap: 2em;
@@ -61,32 +64,21 @@
     padding: 0;
     position: relative;
     height: 25vh;
+    justify-content: center;
     text-shadow: -2px 0 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 2px -2px 0 #fff,
       0 -2px 0 #fff;
   }
 
-  div {
-    animation: sunset 15s infinite ease-in-out alternate;
-    border-radius: 50% 50% 0 0;
-    box-shadow: inset 0 0 300px #000;
-    position: absolute;
-    left: -300px;
-    height: calc(100% + 300px);
-    width: calc(100% + 300px * 2);
-  }
-
-  section {
-    animation: sunset 15s infinite ease-in-out alternate;
-    width: 100%;
-  }
-
   svg {
-    animation: sun 15s infinite ease-in-out alternate;
+    animation: sun var(--animation-duration) ease-in-out infinite alternate;
+    bottom: 0;
     clip-path: circle(25% at 50% 100%);
     color: rgba(210, 200, 108, 1);
     position: absolute;
+    left: calc(50% - 12.5vw);
     height: 100%;
-    width: 100%;
+    max-width: 25vw;
+    width: 25vw;
   }
 
   @keyframes sun {
@@ -106,13 +98,13 @@
 
   @keyframes sunset {
     0% {
-      background-color: rgb(247, 196, 84);
+      background-position: 50% 0%;
     }
     50% {
-      background-color: rgba(240, 173, 73, 0.947);
+      background-position: 50% 100%;
     }
     100% {
-      background-color: rgba(245, 123, 57, 0.769);
+      background-position: 50% 0%;
     }
   }
 </style>
