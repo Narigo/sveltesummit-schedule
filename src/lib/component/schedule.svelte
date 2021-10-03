@@ -48,6 +48,7 @@
 <style>
   ol {
     list-style-type: none;
+    overflow: hidden;
     padding: 0;
   }
 </style>
