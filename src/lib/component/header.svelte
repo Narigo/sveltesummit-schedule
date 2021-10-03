@@ -46,12 +46,13 @@
       <rect x="0" y="0" width="1000" height="500" filter="url(#noise)" />
     </g>
   </svg>
-  <slot />
+  <section>
+    <slot />
+  </section>
 </header>
 
 <style>
   header {
-    background-color: #000;
     color: #000;
     display: flex;
     gap: 2em;
@@ -72,6 +73,11 @@
     left: -300px;
     height: calc(100% + 300px);
     width: calc(100% + 300px * 2);
+  }
+
+  section {
+    animation: sunset 15s infinite ease-in-out alternate;
+    width: 100%;
   }
 
   svg {
