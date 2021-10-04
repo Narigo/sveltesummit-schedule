@@ -1,57 +1,59 @@
 <header>
-  <svg
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    width="100%"
-    viewBox="0 0 1000 500"
-    preserveAspectRatio="xMidYMin slice"
-  >
-    <defs>
-      <filter
-        x="0%"
-        y="0%"
-        width="100%"
-        height="100%"
-        id="noise"
-        filterUnits="objectBoundingBox"
-        color-interpolation-filters="sRGB"
-      >
-        <feTurbulence
-          result="f1"
-          type="fractalNoise"
-          stitchTiles="noStitch"
-          baseFrequency="1"
-          numOctaves="1"
-          seed="0"
-        />
-        <feColorMatrix
-          in="f1"
-          result="f2"
-          type="matrix"
-          values="0 0 0 0 0
-                 -8 0 0 0 4
-                  0 0 0 0 0
-                  0 0 0 0 1"
-        />
-        <feColorMatrix in="f2" result="f3" type="luminanceToAlpha" />
-        <feMerge>
-          <feMergeNode in="SourceGraphic" />
-          <feMergeNode in="f3" />
-        </feMerge>
-      </filter>
-    </defs>
-    <g fill="currentColor">
-      <rect x="0" y="0" width="1000" height="500" filter="url(#noise)" />
-    </g>
-  </svg>
-  <section>
-    <slot />
-  </section>
+  <div>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="100%"
+      viewBox="0 0 1000 500"
+      preserveAspectRatio="xMidYMin slice"
+    >
+      <defs>
+        <filter
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+          id="noise"
+          filterUnits="objectBoundingBox"
+          color-interpolation-filters="sRGB"
+        >
+          <feTurbulence
+            result="f1"
+            type="fractalNoise"
+            stitchTiles="noStitch"
+            baseFrequency="1"
+            numOctaves="1"
+            seed="0"
+          />
+          <feColorMatrix
+            in="f1"
+            result="f2"
+            type="matrix"
+            values="0 0 0 0 0
+                   -8 0 0 0 4
+                    0 0 0 0 0
+                    0 0 0 0 1"
+          />
+          <feColorMatrix in="f2" result="f3" type="luminanceToAlpha" />
+          <feMerge>
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="f3" />
+          </feMerge>
+        </filter>
+      </defs>
+      <g fill="currentColor">
+        <rect x="0" y="0" width="1000" height="500" filter="url(#noise)" />
+      </g>
+    </svg>
+    <section>
+      <slot />
+    </section>
+  </div>
 </header>
 
 <style>
-  header {
+  div {
     --animation-duration: 25s;
     animation: sunset var(--animation-duration) infinite ease-in-out alternate;
     background: linear-gradient(180deg, rgb(117, 62, 206), rgb(225, 142, 78));
