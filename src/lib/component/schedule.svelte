@@ -22,7 +22,6 @@
   });
 </script>
 
-<h2>Svelte Summit Schedule</h2>
 <ol>
   {#each scheduleByTimes as talk, index}
     <ScheduleItem

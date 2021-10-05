@@ -11,7 +11,7 @@
 
 <Layout>
   <div slot="header">
-    <h1>Svelte Summit schedule {schedule}</h1>
+    <h1>{scheduleObject.label}</h1>
   </div>
 
   <p>Please select your favorite timezone:</p>
