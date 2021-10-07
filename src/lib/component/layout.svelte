@@ -47,6 +47,7 @@
 
   footer {
     --link-color: #f9f9f9;
+    background-color: rgb(238, 192, 124);
   }
 
   footer ul {
