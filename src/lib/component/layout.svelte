@@ -38,7 +38,7 @@
 <style>
   footer {
     background-color: #666;
-    color: #f9f9f9;
+    color: #222;
     display: flex;
     gap: 2em;
     margin: 0;
@@ -60,6 +60,7 @@
 
   main {
     align-items: center;
+    background-color: #e9e9e9;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
