@@ -2,6 +2,16 @@
   import availableSchedules from "$lib/service/schedules";
   import Layout from "$lib/component/layout.svelte";
   import Link from "$lib/component/link.svelte";
+
+  function formatDate(date: Date): string {
+    return `${date.getUTCFullYear()}-${nf(date.getUTCMonth() + 1)}-${nf(
+      date.getUTCDate()
+    )}`;
+
+    function nf(n: number): string {
+      return (n < 10 ? "0" : "") + n;
+    }
+  }
 </script>
 
 <Layout>
@@ -10,7 +20,8 @@
   </div>
   <section>
     {#each availableSchedules as schedule}
-      <Link to={`/schedule/${schedule.value}`}>{schedule.label}</Link>
+      <Link to={`/schedule/${schedule.value}`}>{schedule.label}</Link><br />
+      {formatDate(schedule.start)}
     {/each}
   </section>
   <div slot="footer">
