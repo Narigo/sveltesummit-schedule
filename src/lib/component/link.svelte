@@ -5,7 +5,7 @@
   const path = /^\w+:\/\//.test(to) ? to : `${base}${to}`;
 </script>
 
-<a href={path}><slot /></a>
+<a href={path} {...$$restProps}><slot /></a>
 
 <style>
   :global(html) {

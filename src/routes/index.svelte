@@ -25,7 +25,11 @@
     {/each}
   </section>
   <div slot="footer">
-    <h1>done.</h1>
+    <Link
+      to="https://sveltesummit.com/"
+      target="_blank"
+      rel="noopener nofollow noreferer">Official Svelte Summit page</Link
+    >
   </div>
 </Layout>
 
