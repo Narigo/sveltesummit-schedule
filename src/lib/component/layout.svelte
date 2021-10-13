@@ -3,12 +3,14 @@
   import Header from "./header.svelte";
   import Link from "./link.svelte";
 
+  export let variant: "fall" | "spring" = "spring";
+
   const firstThreeSchedules = availableSchedules.slice(0, 3);
   const hasMoreSchedules = availableSchedules.length >= 4;
 </script>
 
 <slot name="fullheader">
-  <Header>
+  <Header {variant}>
     <slot name="header">hello</slot>
   </Header>
 </slot>

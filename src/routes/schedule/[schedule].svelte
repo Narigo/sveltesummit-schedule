@@ -9,7 +9,7 @@
   let offset = 0;
 </script>
 
-<Layout>
+<Layout variant={scheduleObject.variant}>
   <div slot="header">
     <h1>{scheduleObject.label}</h1>
   </div>
