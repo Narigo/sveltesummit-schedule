@@ -10,7 +10,7 @@
   div {
     --animation-duration: 25s;
     animation: sunset var(--animation-duration) infinite ease-in-out alternate;
-    background: linear-gradient(180deg, rgb(117, 62, 206), rgb(128, 60, 9));
+    background: linear-gradient(180deg, rgb(176, 41, 0), rgb(250, 175, 84));
     background-size: 400% 400%;
     color: #000;
     display: flex;

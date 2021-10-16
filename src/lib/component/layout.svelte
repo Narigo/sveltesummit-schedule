@@ -1,9 +1,10 @@
 <script lang="ts">
+  import type { HeaderVariant } from "./header/header.types";
   import availableSchedules from "$lib/service/schedules";
   import Header from "./header.svelte";
   import Link from "./link.svelte";
 
-  export let variant: "fall" | "spring" = "spring";
+  export let variant: HeaderVariant | undefined = undefined;
 
   const firstThreeSchedules = availableSchedules.slice(0, 3);
   const hasMoreSchedules = availableSchedules.length >= 4;
