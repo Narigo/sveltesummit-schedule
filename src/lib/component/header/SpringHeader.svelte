@@ -56,7 +56,7 @@
   div {
     --animation-duration: 25s;
     animation: sunset var(--animation-duration) infinite ease-in-out alternate;
-    background: linear-gradient(180deg, rgb(117, 62, 206), rgb(225, 142, 78));
+    background: linear-gradient(180deg, rgb(0, 0, 0), rgb(117, 62, 206), rgb(225, 142, 78));
     background-size: 400% 400%;
     color: #000;
     display: flex;
@@ -86,15 +86,19 @@
   @keyframes sun {
     0% {
       color: rgba(245, 123, 57, 0.769);
-      clip-path: circle(23% at 50% 100%);
+      clip-path: circle(0% at 50% 100%);
+    }
+    15% {
+      color: rgba(245, 123, 57, 0.769);
+      clip-path: circle(0% at 50% 100%);
     }
     50% {
-      color: rgb(247, 196, 84);
-      clip-path: circle(26% at 50% 100%);
-    }
-    100% {
       color: rgba(240, 173, 73, 0.947);
       clip-path: circle(23% at 50% 100%);
+    }
+    100% {
+      color: rgb(247, 196, 84);
+      clip-path: circle(26% at 50% 100%);
     }
   }
 
@@ -102,11 +106,14 @@
     0% {
       background-position: 50% 0%;
     }
+    15% {
+      background-position: 50% 0%;
+    }
     50% {
-      background-position: 50% 100%;
+      background-position: 50% 75%;
     }
     100% {
-      background-position: 50% 0%;
+      background-position: 50% 100%;
     }
   }
 </style>
