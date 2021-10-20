@@ -16,7 +16,7 @@
   let startInMinutes =
     scheduleMeta.start.getUTCHours() * 60 + scheduleMeta.start.getUTCMinutes();
 
-  import(`../service/schedules/${scheduleFile}.js`).then((m) => {
+  $: import(`../service/schedules/${scheduleFile}.js`).then((m) => {
     schedule = m.default;
     scheduleByTimes = getScheduleByTimes(schedule);
   });

@@ -4,9 +4,14 @@
   import Schedule from "$lib/component/schedule.svelte";
   import availableSchedules from "$lib/service/schedules";
   import timezones from "$lib/service/timezones";
+
   let schedule: string = $page.params.schedule;
   let scheduleObject = availableSchedules.find((s) => s.value === schedule);
   let offset = 0;
+  $: {
+    schedule = $page.params.schedule;
+    scheduleObject = availableSchedules.find((s) => s.value === schedule);
+  }
 </script>
 
 <Layout variant={scheduleObject.variant}>
