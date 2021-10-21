@@ -54,7 +54,7 @@
 
 <style>
   div {
-    --animation-duration: 25s;
+    --animation-duration: 120s;
     animation: sunset var(--animation-duration) infinite ease-in-out alternate;
     background: linear-gradient(180deg, rgb(0, 0, 0), rgb(117, 62, 206), rgb(225, 142, 78));
     background-size: 400% 400%;
