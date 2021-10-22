@@ -9,5 +9,12 @@
   <h1 slot="header">404 - Not found</h1>
   <p>The page {path} could not be found.</p>
   <Link to="/">Main page</Link>
-  <footer slot="footer" />
+  <div slot="footer">
+    <Link to="/">Main page</Link>
+    <Link
+      to="https://sveltesummit.com/"
+      target="_blank"
+      rel="noopener nofollow noreferer">Official Svelte Summit page</Link
+    >
+  </div>
 </Layout>
