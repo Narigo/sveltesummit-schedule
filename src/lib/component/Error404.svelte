@@ -23,6 +23,6 @@
   div {
     display: flex;
     flex: 1;
-    justify-content: space-between;
+    gap: 2em;
   }
 </style>
