@@ -24,6 +24,9 @@
       {formatDate(schedule.start)}
     {/each}
   </section>
+  <section>
+    Please check the official Svelte Summit page if schedule is up.
+  </section>
   <div slot="footer">
     <Link
       to="https://sveltesummit.com/"
